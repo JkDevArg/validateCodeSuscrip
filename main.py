@@ -114,7 +114,7 @@ async def code_info(request: Request):
 
 # Endpoint secreto para obtener el código actual (solo para desarrollo/testing)
 @app.get("/admin/get-code")
-@limiter.limit("3/hour")
+@limiter.limit("5/hour")
 async def get_code_admin(request: Request, admin_key: str = None):
     """
     Endpoint administrativo para obtener el código actual
